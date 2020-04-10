@@ -1,3 +1,64 @@
-.main__list {
-  padding-left: 2rem;
+// Cursor styles
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+// Background animation in black
+%common-style {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.background {
+  @extend %common-style;
+  > div {
+    @extend %common-style;
+    will-change: opacity;
+  }
+  .background--one {
+    background: linear-gradient(180deg, #19191a 60%, #050213 100%);
+  }
+  .background--two {
+    background: linear-gradient(300deg, #0e0d14 60%, #111111 100%);
+    animation: bk-1 20s linear infinite;
+  }
+  .background--three {
+    background: linear-gradient(10deg, #4d4c50 60%, #0b0c14 100%);
+    animation: bk-2 25s linear infinite;
+  }
+}
+
+@keyframes bk-1 {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bk-2 {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
